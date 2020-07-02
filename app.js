@@ -12,5 +12,5 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/', router);
 
 app.listen(port, () => {
-    console.log('Sunucumuz calismaya baslamistir');
+    console.log('Sunucumuz calismaya baslamistir...');
 });
