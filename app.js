@@ -5,7 +5,7 @@ const body_parser = require("body-parser");
 const path = require("path");
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
-const socket = require('socket.io');
+const io = require('./controller/wsController');
 
 app.use(body_parser.urlencoded({'extended': 'true'}));
 app.set('view engine', 'ejs');
@@ -17,8 +17,7 @@ const server = app.listen(port, () => {
     console.log('Sunucumuz calismaya baslamistir');
 });
 
-var io = socket(server);
-
+io.listen(server);
 mongoose.connect('mongodb+srv://admin:158183@ieeeiot.ebk0k.mongodb.net/ieeeiot?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true

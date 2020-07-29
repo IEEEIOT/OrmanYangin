@@ -5,6 +5,7 @@ const indexController = require('../controller/indexController');
 const notFoundController = require('../controller/notFoundController');
 const mqttDataController = require('../controller/mqttDataController');
 const historyController = require('../controller/historyController');
+const wsController = require('../controller/wsController');
 
 router.get('/', indexController.renderIndex);
 // router.post('/getData', mqttDataController.getData);

@@ -2,8 +2,17 @@
     let pageName = "Anasayfa";
 </script>
 
+
 <%-include('topView')%>
-<!-- <script>cdn</script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
+<script>
+    const socket = io("http://localhost:3000/");
+        socket.on('sensor_a1', function(msg){
+        console.log(msg);
+        });
+
+</script>
 
 İndex Page
 
@@ -11,3 +20,4 @@
 
 
 <%-include('bottomView')%>
+
