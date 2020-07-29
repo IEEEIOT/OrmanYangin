@@ -14,4 +14,4 @@ const veriSchema = new Schema({
     collection: 'veriler'
 });
 
-module.exports = mongoose.model('Model',veriSchema);
+module.exports = mongoose.model('veriler',veriSchema);

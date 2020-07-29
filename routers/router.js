@@ -7,7 +7,8 @@ const mqttDataController = require('../controller/mqttDataController');
 
 
 router.get('/', indexController.renderIndex);
-router.post('/getData', mqttDataController.getData);
+// router.post('/getData', mqttDataController.getData);
 router.get('*', notFoundController.renderNotFound);
+router.get('/history', historyController.renderHistory);
 
 module.exports = router;
