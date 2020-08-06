@@ -2,26 +2,21 @@ jQuery(function($){
 	$('.table').footable({
 		"columns": [
 			{ "name": "id", "title": "ID", "breakpoints": "xs" },
-			{ "name": "firstName", "title": "First Name" },
-			{ "name": "lastName", "title": "Last Name" },
-			{ "name": "jobTitle", "title": "Job Title", "breakpoints": "xs" },
-			{ "name": "started", "title": "Started On", "breakpoints": "xs sm" },
-			{ "name": "dob", "title": "DOB", "breakpoints": "xs sm md" }
+			{ "name": "sensor", "title": "Sensör" },
+			{ "name": "voltaj", "title": "Voltaj" },
+			{ "name": "flame", "title": "Flame", "breakpoints": "xs" },
+			{ "name": "location", "title": "Location", "breakpoints": "xs sm" },
+			{ "name": "date", "title": "Date", "breakpoints": "xs sm md" }
 		],
 		"rows": [
 			{
 				"options": {
 					"expanded": true
 				},
-				"value": { "id": 1, "firstName": "Dennise", "lastName": "Fuhrman", "jobTitle": "High School History Teacher", "started": "November 8th 2011", "dob": "July 25th 1960" }
+				"value": { "id": 1, "sensor": "Duman", "voltaj": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960" }
 			},
-			{ "id": 2, "firstName": "Elodia", "lastName": "Weisz", "jobTitle": "Wallpaperer Helper", "started": "October 15th 2010", "dob": "March 30th 1982" },
-			{ "id": 3, "firstName": "Raeann", "lastName": "Haner", "jobTitle": "Internal Medicine Nurse Practitioner", "started": "November 28th 2013", "dob": "February 26th 1966" },
-			{ "id": 4, "firstName": "Junie", "lastName": "Landa", "jobTitle": "Offbearer", "started": "October 31st 2010", "dob": "March 29th 1966" },
-			{ "id": 5, "firstName": "Solomon", "lastName": "Bittinger", "jobTitle": "Roller Skater", "started": "December 29th 2011", "dob": "September 22nd 1964" },
-			{ "id": 6, "firstName": "Bar", "lastName": "Lewis", "jobTitle": "Clown", "started": "November 12th 2012", "dob": "August 4th 1991" },
-			{ "id": 7, "firstName": "Usha", "lastName": "Leak", "jobTitle": "Ships Electronic Warfare Officer", "started": "August 14th 2012", "dob": "November 20th 1979" },
-			{ "id": 8, "firstName": "Lorriane", "lastName": "Cooke", "jobTitle": "Technical Services Librarian", "started": "September 21st 2010", "dob": "April 7th 1969" }
+			{ "id": 2, "sensor": "Pil", "voltaj": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018" },
+			{ "id": 3, "sensor": "Duman", "voltaj": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960" }
 		]
 	});
 });
