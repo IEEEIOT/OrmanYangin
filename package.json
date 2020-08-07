@@ -9,7 +9,8 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mongoose": "^5.9.16",
-    "mqtt": "^4.1.0"
+    "mqtt": "^4.1.0",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,4 +1,5 @@
 const mqtt = require('mqtt');
+
 const client = mqtt.connect('mqtt://broker.hivemq.com', options);
 
 const topicgelenler = "gelenler/sensor1";
@@ -27,8 +28,4 @@ client.on('connect', () => {
     });
 });
 
-
-
-module.exports.getData = (req, res) => {
-    res.json(mes);
-};
+module.exports = mes;
