@@ -6,18 +6,243 @@
 <%-include('topView')%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
-<script>
-    const socket = io("http://localhost:3000/");
-        socket.on('sensor_a1', function(msg){
-        console.log(msg);
+<link href="/public/css/bootstrap.min.css" rel="stylesheet">
+<link href="/public/css/main.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+<!-- şemaların başlıkları -->
+
+
+<div class="row">
+    <div class="col-lg-2"></div>
+
+
+    <div class="col-lg-4">
+        <div class="bg-white rounded-lg p-5 shadow">
+            <h1 class="h3 font-weight-bold text-center mb-4">A Bölgesi</h1>
+        </div>
+    </div>
+
+    <div class=" col-lg-4 ">
+        <div class="bg-white rounded-lg p-5 shadow">
+            <h1 class="h3 font-weight-bold text-center mb-4">B Bölgesi</h1>
+        </div>
+    </div>
+
+    <div class="col-lg-2"></div>
+</div>
+<!-- Şema başlıkları bitiş -->
+
+
+
+
+
+ <!-- Şemalar-->
+
+<div class="row">
+
+    <!-- satır başı boşluğu -->
+    <div class="col-lg-2"></div>
+
+    <!-- Donut 1 -->
+    <div class="col-lg-2">
+
+        <div id="donut1value" class="progress mx-auto" data-value='20'>
+            <span class="progress-left">
+                <span class="progress-bar border-primary"></span>
+            </span>
+            <span class="progress-right">
+                <span class="progress-bar border-primary"></span>
+            </span>
+
+            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+
+                <div id="donut1text" class="h2 font-weight-bold">20</div>
+                <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
+
+            </div>
+        </div>
+        <!-- donut bilgisi-->
+        <div class="row text-center mt-4">
+            <div class="col-4 "> </div>
+            <div class="col-2 ">
+                <div class="h4 font-weight-bold mb-0">Pil</div>
+            </div>
+        </div>
+        <!-- END -->
+    </div>
+    <!-- END -->
+
+    <!-- Donut 2 -->
+
+    <div class="col-lg-2">
+        <div id="donut2value" class="progress mx-auto" data-value='25'>
+
+            <span class="progress-left">
+                <span class="progress-bar border-danger"></span>
+            </span>
+            <span class="progress-right">
+                <span class="progress-bar border-danger"></span>
+            </span>
+
+            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+
+                <div id="donut2text" class="h2 font-weight-bold">25</div>
+                <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
+
+            </div>
+
+        </div>
+        <!-- donut bilgisi-->
+        <div class="row text-center mt-4">
+
+            <div class="col-3 "> </div>
+            <div class="col-2 ">
+                <div class="h4 font-weight-bold mb-0">Duman</div>
+            </div>
+
+        </div>
+
+        <!-- END -->
+    </div>
+    <!-- END -->
+
+    <!-- Donut 3 -->
+    <div class="col-lg-2">
+
+        <div id="donut3value" class="progress mx-auto" data-value='70'>
+            <span class="progress-left">
+                <span class="progress-bar border-success"></span>
+            </span>
+            <span class="progress-right">
+                <span class="progress-bar border-success"></span>
+            </span>
+            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+
+                <div id="donut3text" class="h2 font-weight-bold">70</div>
+                <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
+
+            </div>
+        </div>
+        <!-- donut bilgisi-->
+        <div class="row text-center mt-4">
+            <div class="col-4 "> </div>
+            <div class="col-2 ">
+                <div class="h4 font-weight-bold mb-0">Pil</div>
+            </div>
+        </div>
+
+        <!-- END -->
+
+    </div>
+    <!-- END -->
+
+    <!-- Donut 4 -->
+    <div class="col-lg-2">
+        <div id="donut4value" class="progress mx-auto" data-value='12'>
+
+            <span class="progress-left">
+                <span class="progress-bar border-warning"></span>
+            </span>
+            <span class="progress-right">
+                <span class="progress-bar border-warning"></span>
+            </span>
+
+            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+
+                <div id="donut4text" class="h2 font-weight-bold">12</div>
+                <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
+
+            </div>
+        </div>
+        <!-- donut bilgisi-->
+        <div class="row text-center mt-4">
+            <div class="col-3 "> </div>
+            <div class="col-2 ">
+                <div class="h4 font-weight-bold mb-0">Duman</div>
+            </div>
+        </div>
+
+        <!-- END -->
+        <div class="col-lg-2"></div>
+
+    </div>
+    <!-- END -->
+</div>
+
+<!-- Şemalar bitiş -->
+
+
+
+
+
+</br>
+</br>
+</br>
+</br>
+
+
+
+
+
+
+
+
+    <script>
+        const socket = io("http://localhost:3000/");
+        socket.on('sensor_a1', function (msg) {
+            console.log(msg);
         });
 
-</script>
-
-İndex Page
+    </script>
 
 
 
 
-<%-include('bottomView')%>
 
+
+    <%-include('bottomView')%>
+
+
+
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- ŞEMALARIN ÇALIŞMA FONKSİYONU -->
+<script>
+    $(function() {
+
+       $(".progress").each(function() {
+     
+         var value = $(this).attr('data-value');
+         var left = $(this).find('.progress-left .progress-bar');
+         var right = $(this).find('.progress-right .progress-bar');
+     
+         if (value > 0) {
+           if (value <= 50) {
+             right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+           } else {
+             right.css('transform', 'rotate(180deg)')
+             left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+           }
+         }
+     
+       })
+     
+       function percentageToDegrees(percentage) {
+     
+         return percentage / 100 * 360
+     
+       }
+     
+     });
+     
+   </script>
+<!-- FONKSİYON BİTİŞ -->
