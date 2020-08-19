@@ -189,6 +189,25 @@
 
 
 
+<!-- Geçmiş Veriler Tablosu -->
+
+<div class="container">         
+    <table class="table" data-empty="There are no rows" data-expand-first="true">
+    </table>
+</div>
+
+<!-- Geçmiş Veriler Tablo Bitiş -->
+
+
+
+
+
+</br>
+</br>
+</br>
+</br>
+
+
 
 
 
@@ -213,6 +232,9 @@
 
 <script src="/public/js/bootstrap.min.js"></script>
 <script src="/public/js/bootstrap.bundle.min.js"></script>
+<script src="/public/css/footable.bootstrap.css"></script>
+<script src="/public/js/footable.js"></script>
+
 
 
 <!-- ŞEMALARIN ÇALIŞMA FONKSİYONU -->
@@ -245,4 +267,35 @@
      });
      
    </script>
-<!-- FONKSİYON BİTİŞ -->
+<!-- ŞEMA FONKSİYON BİTİŞ -->
+
+
+<!-- TABLO FONSİYONU -->
+<script>
+    jQuery(function($){
+	$('.table').footable({
+		"columns": [
+			{ "name": "id", "title": "ID", "breakpoints": "xs" },
+			{ "name": "sensor", "title": "Sensör" },
+			{ "name": "voltaj", "title": "Voltaj" },
+			{ "name": "flame", "title": "Flame", "breakpoints": "xs" },
+			{ "name": "location", "title": "Location", "breakpoints": "xs sm" },
+			{ "name": "date", "title": "Date", "breakpoints": "xs sm md" }
+		],
+		"rows": [
+			{
+				"options": {
+
+					"expanded": true
+				},
+				"value": { "id": 1, "sensor": "Duman", "voltaj": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960" }
+			},
+			{ "id": 2, "sensor": "Pil", "voltaj": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018" },
+            { "id": 3, "sensor": "Duman", "voltaj": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960" },
+            { "id": 4, "sensor": "Pil", "voltaj": "17", "flame": "45", "location": "D Bölgesi", "date": "July 15th 1979" }
+		]
+	});
+});
+
+</script>
+<!-- TABLO FONSİYONU BİTİŞ -->
