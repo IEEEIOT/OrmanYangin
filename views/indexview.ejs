@@ -13,9 +13,6 @@
 
 
 
-
-
-
 <!-- şemaların başlıkları -->
 
 
@@ -192,7 +189,7 @@
 <!-- Geçmiş Veriler Tablosu -->
 
 <div class="container">         
-    <table class="table" data-empty="There are no rows" data-expand-first="true">
+    <table class="table" data-empty="There are no rows" data-expand-first="true" data-paging="true">
     </table>
 </div>
 
@@ -270,30 +267,36 @@
 <!-- ŞEMA FONKSİYON BİTİŞ -->
 
 
+<!-- Veritabanından Gelecek Geçmiş Veri Temsili -->
+<script>
+    var jsonobj = [
+        { "id": 1, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 2, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 3, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" }
+    ]
+ </script>
+<!-- Temsili Veri Bitiş -->
+
+
+
 <!-- TABLO FONSİYONU -->
 <script>
     jQuery(function($){
 	$('.table').footable({
-		"columns": [
+        
+         "columns": 
+         [
 			{ "name": "id", "title": "ID", "breakpoints": "xs" },
 			{ "name": "sensor", "title": "Sensör" },
-			{ "name": "voltaj", "title": "Voltaj" },
+			{ "name": "voltage", "title": "Voltaj" },
 			{ "name": "flame", "title": "Flame", "breakpoints": "xs" },
 			{ "name": "location", "title": "Location", "breakpoints": "xs sm" },
-			{ "name": "date", "title": "Date", "breakpoints": "xs sm md" }
-		],
-		"rows": [
-			{
-				"options": {
-
-					"expanded": true
-				},
-				"value": { "id": 1, "sensor": "Duman", "voltaj": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960" }
-			},
-			{ "id": 2, "sensor": "Pil", "voltaj": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018" },
-            { "id": 3, "sensor": "Duman", "voltaj": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960" },
-            { "id": 4, "sensor": "Pil", "voltaj": "17", "flame": "45", "location": "D Bölgesi", "date": "July 15th 1979" }
-		]
+            { "name": "date", "title": "Date", "breakpoints": "xs sm md" },
+            { "name": "co", "title": "CO", "breakpoints": "xs sm md" }
+		],    
+                                                                    
+        "rows": jsonobj
+        
 	});
 });
 
