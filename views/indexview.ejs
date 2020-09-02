@@ -4,13 +4,17 @@
 
 
 <%-include('topView')%>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="/public/css/footable.bootstrap.min.css"></script>
 
-<link href="/public/css/bootstrap.min.css" rel="stylesheet">
-<link href="/public/css/main.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css"  href="/public/css/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="/public/css/main.css" >
 
 
 
+<!-- SAYFA YENİLEME FONKSİYONU -->
+<!-- <meta http-equiv="Refresh" Content="5"> -->
 
 
 <!-- şemaların başlıkları -->
@@ -34,13 +38,14 @@
 
     <div class="col-lg-2"></div>
 </div>
+
+
 <!-- Şema başlıkları bitiş -->
 
 
 
 
-
- <!-- Şemalar-->
+ <!-- Şemalar 1.-->
 
 <div class="row">
 
@@ -169,13 +174,118 @@
         <!-- END -->
         <div class="col-lg-2"></div>
 
+
+
+
     </div>
     <!-- END -->
+
 </div>
 
 <!-- Şemalar bitiş -->
 
 
+<!-- İKİNCİ SATIR ŞEMA BAŞLIKLARI -->
+
+<div class="row">
+
+    <div class="col-lg-4"></div>
+
+
+    <div class="col-lg-4">
+        <div class="bg-white rounded-lg p-5 shadow">
+            <h1 class="h3 font-weight-bold text-center mb-4">C Bölgesi</h1>
+        </div>
+    </div>
+
+
+
+    <div class="col-lg-2"></div>
+
+</div>
+
+<!-- İKİNCİ SATIR ŞEMA BAŞLIKLARI BİTİŞ -->
+
+
+
+
+<!-- İKİNCİ SATIR ŞEMALAR -->
+<div class="row">
+
+<!-- satır başı boşluğu -->
+<div class="col-lg-4"></div>
+
+<!-- Donut 1 -->
+<div class="col-lg-2">
+
+    <div id="donut5value" class="progress mx-auto" data-value='20'>
+        <span class="progress-left">
+            <span class="progress-bar border-primary"></span>
+        </span>
+        <span class="progress-right">
+            <span class="progress-bar border-primary"></span>
+        </span>
+
+        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+
+            <div id="donut5text" class="h2 font-weight-bold">20</div>
+            <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
+
+        </div>
+    </div>
+    <!-- donut bilgisi-->
+    <div class="row text-center mt-4">
+        <div class="col-4 "> </div>
+        <div class="col-2 ">
+            <div class="h4 font-weight-bold mb-0">Pil</div>
+        </div>
+    </div>
+    <!-- END -->
+</div>
+<!-- END -->
+
+<!-- Donut 2 -->
+
+<div class="col-lg-2">
+    <div id="donut6value" class="progress mx-auto" data-value='25'>
+
+        <span class="progress-left">
+            <span class="progress-bar border-danger"></span>
+        </span>
+        <span class="progress-right">
+            <span class="progress-bar border-danger"></span>
+        </span>
+
+        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+
+            <div id="donut6text" class="h2 font-weight-bold">25</div>
+            <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
+
+        </div>
+
+    </div>
+    <!-- donut bilgisi-->
+    <div class="row text-center mt-4">
+
+        <div class="col-3 "> </div>
+        <div class="col-2 ">
+            <div class="h4 font-weight-bold mb-0">Duman</div>
+        </div>
+
+    </div>
+
+    <!-- END -->
+
+    
+</div>
+
+<div class="col-lg-2"></div>
+
+</div>
+<!-- END -->
+
+
+<!-- İKİNCİ SATIR ŞEMALAR BİTİŞ -->
 
 
 
@@ -183,15 +293,21 @@
 </br>
 </br>
 </br>
+
+
+
+
+
+
 
 
 
 <!-- Geçmiş Veriler Tablosu -->
 
-<div class="container">         
-    <table class="table" data-empty="There are no rows" data-expand-first="true" data-paging="true">
+ 
+    <table class="table"  data-sorting="true" data-paging="true">
     </table>
-</div>
+
 
 <!-- Geçmiş Veriler Tablo Bitiş -->
 
@@ -227,10 +343,15 @@
 
 
 
-<script src="/public/js/bootstrap.min.js"></script>
-<script src="/public/js/bootstrap.bundle.min.js"></script>
-<script src="/public/css/footable.bootstrap.css"></script>
-<script src="/public/js/footable.js"></script>
+
+
+    <script src="/public/js/jquery-3.1.1.min.js"></script>
+    <script src="/public/js/moment.min.js"></script>
+    <script src="/public/js/footable.min.js"></script>
+    
+
+
+
 
 
 
@@ -272,7 +393,37 @@
     var jsonobj = [
         { "id": 1, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
         { "id": 2, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 3, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" }
+        { "id": 3, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
+        { "id": 4, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 5, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 6, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
+        { "id": 7, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 8, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 9, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
+        { "id": 10, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 11, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 12, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
+        { "id": 13, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 14, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 15, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
+        { "id": 16, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 17, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 18, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
+        { "id": 19, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 20, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 21, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
+        { "id": 22, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 23, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 24, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
+        { "id": 25, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 26, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 27, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
+        { "id": 28, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 29, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 30, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
+        { "id": 31, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
+        { "id": 32, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
+        { "id": 33, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" }
     ]
  </script>
 <!-- Temsili Veri Bitiş -->
@@ -283,7 +434,7 @@
 <script>
     jQuery(function($){
 	$('.table').footable({
-        
+
          "columns": 
          [
 			{ "name": "id", "title": "ID", "breakpoints": "xs" },
@@ -295,10 +446,45 @@
             { "name": "co", "title": "CO", "breakpoints": "xs sm md" }
 		],    
                                                                     
-        "rows": jsonobj
+        "rows": jsonobj,
+
+        "paging": {
+            "enabled": true,
+            "container": "#paging-ui-container",
+            "size": 5
+		}
         
 	});
 });
 
 </script>
 <!-- TABLO FONSİYONU BİTİŞ -->
+
+<!-- ŞEMALARIN DEĞERLERİNİ VERDİĞİMİZ ALAN -->
+
+<script>
+    
+document.getElementById("donut1text").innerHTML = "45";
+document.getElementById("donut1value").setAttribute("data-value", "45");
+
+document.getElementById("donut2text").innerHTML = "12";
+document.getElementById("donut2value").setAttribute("data-value", "12");
+
+document.getElementById("donut3text").innerHTML = "43";
+document.getElementById("donut3value").setAttribute("data-value", "43");
+
+document.getElementById("donut4text").innerHTML = "88";
+document.getElementById("donut4value").setAttribute("data-value", "88");
+
+document.getElementById("donut5text").innerHTML = "44";
+document.getElementById("donut5value").setAttribute("data-value", "44");
+
+document.getElementById("donut6text").innerHTML = "41";
+document.getElementById("donut6value").setAttribute("data-value", "41");
+
+
+
+</script>
+
+
+<!-- ŞEMALARIN DEĞERLERİNİ VERDİĞİMİZ ALAN BİTİŞ -->
