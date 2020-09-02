@@ -5,7 +5,7 @@ const body_parser = require("body-parser");
 const path = require("path");
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
-const io = require('./controller/wsController');
+const io = require('./controller/realtimeDataController');
 
 app.use(body_parser.urlencoded({'extended': 'true'}));
 app.set('view engine', 'ejs');

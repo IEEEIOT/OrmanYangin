@@ -1,4 +1,6 @@
 const mqtt = require('mqtt');
+const socketio = require('socket.io');
+const db_operations = require('../lib/db_operations');
 
 const client = mqtt.connect('mqtt://broker.hivemq.com', options);
 
@@ -10,7 +12,7 @@ var options = {
 };
 console.log(options);
 console.log("buraya gelir");
-let mes;
+let msg;
 client.on('connect', () => {
 
     console.log("ok");
@@ -21,11 +23,26 @@ client.on('connect', () => {
         })
     }
     client.subscribe(topicgelenler, { qos: 0 });
-
-    client.on('message', (topicgelenler, message, packet) => {
-        console.log(JSON.parse(message));
-        mes = JSON.parse(message);
-    });
 });
 
-module.exports = mes;
+module.exports.listen = function(app){
+    io = socketio.listen(app);
+    io.on('connection', (socket) => {
+        console.log('yeni baglanti');
+        socket.on('send message', (data) => {
+            console.log('yeni mesaj' + data);
+        })
+        socket.on('disconnect', () => {
+            console.log('user disconnected' + socket.id);
+        })
+    });
+    
+    client.on('message', (topicgelenler, message, packet) => {
+        console.log(JSON.parse(message));
+        msg = JSON.parse(message);
+        db_operations.kayit(msg);
+        io.emit(msg.sensor, msg);
+    });
+};
+
+

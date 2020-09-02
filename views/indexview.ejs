@@ -335,8 +335,16 @@
     <script>
         const socket = io("http://localhost:3000/");
         socket.on('sensor_a1', function (msg) {
-            document.getElementById("donut1text").innerHTML = "22";
-            document.getElementById("donut1value").setAttribute("data-value", "22");
+            console.log(msg);
+            document.getElementById("donut1text").innerHTML = msg.voltage;
+            document.getElementById("donut1value").setAttribute("data-value", msg.voltage);
+            document.getElementById("donut2text").innerHTML = msg.flame;
+            document.getElementById("donut2value").setAttribute("data-value", msg.flame);
+        });
+        socket.on('sensor_a2', function (msg) {
+            console.log(msg);
+            document.getElementById("donut3text").innerHTML = msg.voltage;
+            document.getElementById("donut3value").setAttribute("data-value", msg.voltage);
         });
 
     </script>
@@ -470,16 +478,6 @@
 <!-- ŞEMALARIN DEĞERLERİNİ VERDİĞİMİZ ALAN -->
 
 <script>
-    
-// document.getElementById("donut1text").innerHTML = "45";
-// document.getElementById("donut1value").setAttribute("data-value", "45");
-
-document.getElementById("donut2text").innerHTML = "12";
-document.getElementById("donut2value").setAttribute("data-value", "12");
-
-document.getElementById("donut3text").innerHTML = "43";
-document.getElementById("donut3value").setAttribute("data-value", "43");
-
 document.getElementById("donut4text").innerHTML = "88";
 document.getElementById("donut4value").setAttribute("data-value", "88");
 
