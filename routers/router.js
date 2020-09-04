@@ -10,7 +10,9 @@ const apiController = require('../controller/apiController');
 router.get('/', indexController.renderIndex);
 router.get('/history', historyController.renderHistory);
 router.get('/api/data', apiController.getData);
-router.get('/api/:number',apiController.getlastXData);
-router.get('/api/:id/:number', apiController.getlastxDatawithinId);
+router.get('/api/number/:number',apiController.getlastXData);
+router.get('/api/id/:id/number/:number', apiController.getlastxDatawithinId);
+router.get('/api/yangin', apiController.getDangerData);
+router.get('/api/yangin/id/:id/number/:number' , apiController.getDangerData2);
 
 module.exports = router;
