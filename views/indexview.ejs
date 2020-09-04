@@ -10,18 +10,20 @@
 
 
 
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-<script src="/public/css/footable.bootstrap.min.css"></script>
-
 <link rel="stylesheet" type="text/css"  href="/public/css/bootstrap.min.css" >
 <link rel="stylesheet" type="text/css" href="/public/css/main.css" >
+<script src="/public/css/footable.bootstrap.css"></script>
 
+<script>
+$(document).ready(function() {
+    $("#responsecontainer").load(jsonobj);
+  var refreshId = setInterval(function() {
+     $("#responsecontainer").load('jsonobj?randval='+ Math.random());
+  }, 3000);
+});
 
-
-
+</script>
 
 
 <!-- şemaların başlıkları -->
@@ -195,32 +197,10 @@
 
 
 
-
-
-
-
 </br>
 </br>
 </br>
 </br>
-
-
-
-
-
-
-
-
-
-<!-- Geçmiş Veriler Tablosu -->
-
- 
-    <table class="table"  data-sorting="true" data-paging="true">
-    </table>
-
-
-<!-- Geçmiş Veriler Tablo Bitiş -->
-
 
 
 
@@ -237,8 +217,7 @@
     <script>
         const socket = io("http://localhost:3000/");
         socket.on('sensor_a1', function (msg) {
-
-            
+          
             console.log(msg);
             document.getElementById("donut1text").innerHTML = msg.voltage;
             document.getElementById("donut1value").setAttribute("data-value", msg.voltage);
@@ -274,10 +253,22 @@ function percentageToDegrees(percentage) {
 
 });
 
+var x = Number(msg.voltage);
+            var y = Number(msg.flame);
+            if(x < 30){
+                alert("Pil azaldı!")
+            }
+            if (y > 60){
+                alert("Yangın var!")
+            }
+
         });
 
         
         socket.on('sensor_a2', function (msg) {
+            var x = Number(msg.voltage);
+            var y = Number(msg.flame);
+           
             console.log(msg);
             document.getElementById("donut3text").innerHTML = msg.voltage;
             document.getElementById("donut3value").setAttribute("data-value", msg.voltage);
@@ -313,11 +304,50 @@ function percentageToDegrees(percentage) {
 
 });
 
+if(x < 30){
+                alert("Pil azaldı!")
+            }
+            if (y > 60){
+                alert("Yangın var!")
+            }
+
    
          });
      
     </script>
 <!-- VERİLERİ ANLIK OLARAK SİTEYE İŞLEME FONKSİYONU BİTİŞ -->
+
+
+<!-- Geçmiş Veriler Tablosu -->
+
+<table   class="table"   data-sorting="true"></table>
+
+<!-- Geçmiş Veriler Tablosu Bitiş -->
+
+
+
+
+<!-- Veritabanından Gelecek Geçmiş Veri Temsili -->
+<script>
+    var jsonobj = [
+        { "sensor_id": 1, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
+        { "sensor_id": 2, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
+        { "sensor_id": 3, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" },
+        { "sensor_id": 4, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
+        { "sensor_id": 5, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
+        { "sensor_id": 6, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" },
+        { "sensor_id": 7, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
+        { "sensor_id": 8, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
+        { "sensor_id": 9, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" },
+        { "sensor_id": 10, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
+        { "sensor_id": 11, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
+        { "sensor_id": 12, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" }
+       
+        
+    ]
+ </script>
+<!-- Temsili Veri Bitiş -->
+
 
 
 
@@ -328,94 +358,74 @@ function percentageToDegrees(percentage) {
 
 
 
-
     <script src="/public/js/jquery-3.1.1.min.js"></script>
     <script src="/public/js/moment.min.js"></script>
-    <script src="/public/js/footable.min.js"></script>
+    <script src="/public/js/footable.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js%22%3E"></script>
+    
 
 
 
 
 
-
-
-
-
-<!-- Veritabanından Gelecek Geçmiş Veri Temsili -->
-<script>
-    var jsonobj = [
-        { "id": 1, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 2, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 3, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 4, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 5, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 6, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 7, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 8, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 9, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 10, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 11, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 12, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 13, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 14, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 15, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 16, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 17, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 18, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 19, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 20, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 21, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 22, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 23, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 24, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 25, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 26, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 27, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 28, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 29, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 30, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 31, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 32, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 33, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" }
-    ]
- </script>
-<!-- Temsili Veri Bitiş -->
 
 
 
 <!-- TABLO FONSİYONU -->
+
+
 <script>
-    jQuery(function($){
+
+
+
+
+jQuery(function($){
 	$('.table').footable({
 
          "columns": 
          [
-			{ "name": "id", "title": "ID", "breakpoints": "xs" },
+			{ "name": "sensor_id", "title": "ID", "breakpoints": "xs" },
 			{ "name": "sensor", "title": "Sensör" },
 			{ "name": "voltage", "title": "Voltaj" },
 			{ "name": "flame", "title": "Flame", "breakpoints": "xs" },
 			{ "name": "location", "title": "Location", "breakpoints": "xs sm" },
             { "name": "date", "title": "Date", "breakpoints": "xs sm md" },
-            { "name": "co", "title": "CO", "breakpoints": "xs sm md" }
+            { "name": "CO", "title": "CO", "breakpoints": "xs sm md" }
 		],    
                                                                     
         "rows": jsonobj,
+        
 
         "paging": {
             "enabled": true,
-            "container": "#paging-ui-container",
+            "container": "#paging-ui-container", 
             "size": 7
 		}
         
 	});
 });
 
+
+// var request = new XMLHttpRequest();
+
+// request.open('GET', 'https://localhost:3000/api/yangin', true);
+
+// request.onload = function () {
+//     var data = JSON.parse(this.response);
+//     //dom eventleri bunun altında gerçekleştirebiliriz.
+
+
+  
+
+// request.send();
+
+//};
+
+
+   
+
 </script>
 <!-- TABLO FONSİYONU BİTİŞ -->
-
-
-
 
 
 
