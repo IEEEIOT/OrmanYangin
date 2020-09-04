@@ -12,5 +12,6 @@ router.get('/history', historyController.renderHistory);
 router.get('/api/data', apiController.getData);
 router.get('/api/:number',apiController.getlastXData);
 router.get('/api/:id/:number', apiController.getlastxDatawithinId);
+router.get('/api/:yangin', apiController.getLastDangerData);
 
 module.exports = router;

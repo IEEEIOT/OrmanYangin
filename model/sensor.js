@@ -9,7 +9,8 @@ const veriSchema = new Schema({
     location : String,
     CO : String,
     date : Date,
-    alive : Boolean
+    alive : Boolean,
+    yanginMi : Boolean
 },{
     collection: 'veriler'
 });
