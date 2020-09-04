@@ -40,15 +40,15 @@ module.exports.listen = function(app){
     client.on('message', (topicgelenler, message, packet) => {
         console.log(JSON.parse(message));
         msg = JSON.parse(message);
+        msg.date = Date.now();
         if(msg.flame > 40){
             msg.yanginMi = true;
-            db_operations.kayit(msg);
         }
         else{
             msg.yanginMi = false;
-            db_operations.kayit(msg);
         }
-        io.emit(msg.sensor, msg);
+        db_operations.kayit(msg);
+        io.emit(msg.sensor_id, msg);
     });
 };
 
