@@ -40,7 +40,7 @@ module.exports.listen = function(app){
     client.on('message', (topicgelenler, message, packet) => {
         console.log(JSON.parse(message));
         msg = JSON.parse(message);
-        msg.date = Date;
+        msg.date = Date.now();
         if(msg.voltage > 40){
             msg.yanginMi = true;
             db_operations.kayit(msg);
