@@ -14,5 +14,8 @@ router.get('/api/number/:number',apiController.getlastXData);
 router.get('/api/id/:id/number/:number', apiController.getlastxDatawithinId);
 router.get('/api/yangin', apiController.getDangerData);
 router.get('/api/yangin/id/:id/number/:number' , apiController.getDangerData2);
+router.get('/api/send-data' , apiController.createData);
+router.get('/api/delete-data', apiController.deleteData);
+
 
 module.exports = router;
