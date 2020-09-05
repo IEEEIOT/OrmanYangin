@@ -15,15 +15,6 @@
 <link rel="stylesheet" type="text/css" href="/public/css/main.css" >
 <script src="/public/css/footable.bootstrap.css"></script>
 
-<script>
-$(document).ready(function() {
-    $("#responsecontainer").load(jsonobj);
-  var refreshId = setInterval(function() {
-     $("#responsecontainer").load('jsonobj?randval='+ Math.random());
-  }, 3000);
-});
-
-</script>
 
 
 <!-- şemaların başlıkları -->
@@ -205,11 +196,6 @@ $(document).ready(function() {
 
 
 
-</br>
-</br>
-</br>
-</br>
-
 
 
 <!-- VERİLERİ ANLIK OLARAK SİTEYE İŞLEME FONKSİYONU -->
@@ -324,25 +310,44 @@ if(x < 30){
 
 <!-- Geçmiş Veriler Tablosu Bitiş -->
 
+</br>
+</br>
+</br>
+</br>
+
 
 
 
 <!-- Veritabanından Gelecek Geçmiş Veri Temsili -->
 <script>
     var jsonobj = [
-        { "sensor_id": 1, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
-        { "sensor_id": 2, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
-        { "sensor_id": 3, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" },
-        { "sensor_id": 4, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
-        { "sensor_id": 5, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
-        { "sensor_id": 6, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" },
-        { "sensor_id": 7, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
-        { "sensor_id": 8, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
-        { "sensor_id": 9, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" },
-        { "sensor_id": 10, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
-        { "sensor_id": 11, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
-        { "sensor_id": 12, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" }
-       
+        // { "sensor_id": "1", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
+        // { "sensor_id": "2", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
+        // { "sensor_id": "3", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" },
+        // { "sensor_id": "4", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
+        // { "sensor_id": "5", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
+        // { "sensor_id": "6", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" },
+        // { "sensor_id": "7", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
+        // { "sensor_id": "8", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
+        // { "sensor_id": "9", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" },
+        // { "sensor_id": "10", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","CO" : "777" },
+        // { "sensor_id": "11", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","CO" : "777" },
+        // { "sensor_id": "12", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","CO" : "671" }
+        
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T16:31:36.799Z"},
+            {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T16:31:36.799Z"},
+            {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T16:31:10.890Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T16:31:05.224Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T16:17:33.624Z"},
+            {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:11:24.494Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"88","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:09:57.770Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"80","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:09:52.775Z"},
+            {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:09:38.893Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:09:15.079Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"80","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:05:28.138Z"},
+            {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:04:51.895Z"}
+        
+
         
     ]
  </script>
@@ -385,12 +390,12 @@ jQuery(function($){
          "columns": 
          [
 			{ "name": "sensor_id", "title": "ID", "breakpoints": "xs" },
-			{ "name": "sensor", "title": "Sensör" },
 			{ "name": "voltage", "title": "Voltaj" },
 			{ "name": "flame", "title": "Flame", "breakpoints": "xs" },
 			{ "name": "location", "title": "Location", "breakpoints": "xs sm" },
-            { "name": "date", "title": "Date", "breakpoints": "xs sm md" },
-            { "name": "CO", "title": "CO", "breakpoints": "xs sm md" }
+            { "name": "CO", "title": "CO", "breakpoints": "xs sm md" },
+            { "name": "date", "title": "Date", "breakpoints": "xs sm md" }
+           
 		],    
                                                                     
         "rows": jsonobj,
