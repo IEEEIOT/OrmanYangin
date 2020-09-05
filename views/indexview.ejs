@@ -10,26 +10,18 @@
 
 
 
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-<script src="/public/css/footable.bootstrap.min.css"></script>
-
 <link rel="stylesheet" type="text/css"  href="/public/css/bootstrap.min.css" >
 <link rel="stylesheet" type="text/css" href="/public/css/main.css" >
+<script src="/public/css/footable.bootstrap.css"></script>
 
-
-
-<!-- SAYFA YENİLEME FONKSİYONU -->
-<!-- <meta http-equiv="Refresh" Content="5"> -->
 
 
 <!-- şemaların başlıkları -->
 
 
 <div class="row">
-    <div class="col-lg-2"></div>
+    
 
 
     <div class="col-lg-4">
@@ -44,7 +36,13 @@
         </div>
     </div>
 
-    <div class="col-lg-2"></div>
+    <div class=" col-lg-4 ">
+        <div class="bg-white rounded-lg p-5 shadow">
+            <h1 class="h3 font-weight-bold text-center mb-4">C Bölgesi</h1>
+        </div>
+    </div>
+
+   
 </div>
 
 
@@ -53,17 +51,16 @@
 
 
 
- <!-- Şemalar 1.-->
+<!-- Şemalar -->
 
 <div class="row">
 
-    <!-- satır başı boşluğu -->
-    <div class="col-lg-2"></div>
+    
 
     <!-- Donut 1 -->
-    <div class="col-lg-2">
+    <div class="col-md-2">
 
-        <div id="donut1value" class="progress mx-auto" data-value='20'>
+        <div id="donut1value" class="progress mx-auto" data-value='null'>
             <span class="progress-left">
                 <span class="progress-bar border-primary"></span>
             </span>
@@ -73,7 +70,7 @@
 
             <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
 
-                <div id="donut1text" class="h2 font-weight-bold">20</div>
+                <div id="donut1text" class="h2 font-weight-bold"></div>
                 <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
 
             </div>
@@ -91,8 +88,8 @@
 
     <!-- Donut 2 -->
 
-    <div class="col-lg-2">
-        <div id="donut2value" class="progress mx-auto" data-value='25'>
+    <div class="col-md-2">
+        <div id="donut2value" class="progress mx-auto" data-value='null'>
 
             <span class="progress-left">
                 <span class="progress-bar border-danger"></span>
@@ -103,7 +100,7 @@
 
             <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
 
-                <div id="donut2text" class="h2 font-weight-bold">25</div>
+                <div id="donut2text" class="h2 font-weight-bold"></div>
                 <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
 
             </div>
@@ -124,9 +121,9 @@
     <!-- END -->
 
     <!-- Donut 3 -->
-    <div class="col-lg-2">
+    <div class="col-md-2">
 
-        <div id="donut3value" class="progress mx-auto" data-value='70'>
+        <div id="donut3value" class="progress mx-auto" data-value='null'>
             <span class="progress-left">
                 <span class="progress-bar border-success"></span>
             </span>
@@ -135,7 +132,7 @@
             </span>
             <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
 
-                <div id="donut3text" class="h2 font-weight-bold">70</div>
+                <div id="donut3text" class="h2 font-weight-bold"></div>
                 <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
 
             </div>
@@ -154,8 +151,8 @@
     <!-- END -->
 
     <!-- Donut 4 -->
-    <div class="col-lg-2">
-        <div id="donut4value" class="progress mx-auto" data-value='12'>
+    <div class="col-md-2">
+        <div id="donut4value" class="progress mx-auto" data-value='null'>
 
             <span class="progress-left">
                 <span class="progress-bar border-warning"></span>
@@ -166,7 +163,7 @@
 
             <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
 
-                <div id="donut4text" class="h2 font-weight-bold">12</div>
+                <div id="donut4text" class="h2 font-weight-bold"></div>
                 <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
 
             </div>
@@ -180,120 +177,81 @@
         </div>
 
         <!-- END -->
-        <div class="col-lg-2"></div>
-
-
 
 
     </div>
     <!-- END -->
+
+         <!-- Donut 5 -->
+         <div class="col-md-2">
+
+            <div id="donut5value" class="progress mx-auto" data-value='null'>
+                <span class="progress-left">
+                    <span class="progress-bar border-primary"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar border-primary"></span>
+                </span>
+    
+                <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+    
+                    <div id="donut5text" class="h2 font-weight-bold"></div>
+                    <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
+    
+                </div>
+            </div>
+            <!-- donut bilgisi-->
+            <div class="row text-center mt-4">
+                <div class="col-4 "> </div>
+                <div class="col-2 ">
+                    <div class="h4 font-weight-bold mb-0">Pil</div>
+                </div>
+            </div>
+            <!-- END -->
+        </div>
+        <!-- END -->
+    
+        <!-- Donut 6 -->
+    
+        <div class="col-md-2">
+            <div id="donut6value" class="progress mx-auto" data-value='null'>
+    
+                <span class="progress-left">
+                    <span class="progress-bar border-danger"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar border-danger"></span>
+                </span>
+    
+                <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+    
+                    <div id="donut6text" class="h2 font-weight-bold"></div>
+                    <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
+    
+                </div>
+    
+            </div>
+            <!-- donut bilgisi-->
+            <div class="row text-center mt-4">
+    
+                <div class="col-3 "> </div>
+                <div class="col-2 ">
+                    <div class="h4 font-weight-bold mb-0">Duman</div>
+                </div>
+    
+            </div>
+    
+            <!-- END -->
+        </div>
+        <!-- END -->
+    
+    
 
 </div>
 
 <!-- Şemalar bitiş -->
 
 
-<!-- İKİNCİ SATIR ŞEMA BAŞLIKLARI -->
-
-<div class="row">
-
-    <div class="col-lg-4"></div>
-
-
-    <div class="col-lg-4">
-        <div class="bg-white rounded-lg p-5 shadow">
-            <h1 class="h3 font-weight-bold text-center mb-4">C Bölgesi</h1>
-        </div>
-    </div>
-
-
-
-    <div class="col-lg-2"></div>
-
-</div>
-
-<!-- İKİNCİ SATIR ŞEMA BAŞLIKLARI BİTİŞ -->
-
-
-
-
-<!-- İKİNCİ SATIR ŞEMALAR -->
-<div class="row">
-
-<!-- satır başı boşluğu -->
-<div class="col-lg-4"></div>
-
-<!-- Donut 1 -->
-<div class="col-lg-2">
-
-    <div id="donut5value" class="progress mx-auto" data-value='20'>
-        <span class="progress-left">
-            <span class="progress-bar border-primary"></span>
-        </span>
-        <span class="progress-right">
-            <span class="progress-bar border-primary"></span>
-        </span>
-
-        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-
-            <div id="donut5text" class="h2 font-weight-bold">20</div>
-            <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
-
-        </div>
-    </div>
-    <!-- donut bilgisi-->
-    <div class="row text-center mt-4">
-        <div class="col-4 "> </div>
-        <div class="col-2 ">
-            <div class="h4 font-weight-bold mb-0">Pil</div>
-        </div>
-    </div>
-    <!-- END -->
-</div>
-<!-- END -->
-
-<!-- Donut 2 -->
-
-<div class="col-lg-2">
-    <div id="donut6value" class="progress mx-auto" data-value='25'>
-
-        <span class="progress-left">
-            <span class="progress-bar border-danger"></span>
-        </span>
-        <span class="progress-right">
-            <span class="progress-bar border-danger"></span>
-        </span>
-
-        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-
-            <div id="donut6text" class="h2 font-weight-bold">25</div>
-            <div class="h2 font-weight-bold"><sup class="small">%</sup></div>
-
-        </div>
-
-    </div>
-    <!-- donut bilgisi-->
-    <div class="row text-center mt-4">
-
-        <div class="col-3 "> </div>
-        <div class="col-2 ">
-            <div class="h4 font-weight-bold mb-0">Duman</div>
-        </div>
-
-    </div>
-
-    <!-- END -->
-
-    
-</div>
-
-<div class="col-lg-2"></div>
-
-</div>
-<!-- END -->
-
-
-<!-- İKİNCİ SATIR ŞEMALAR BİTİŞ -->
 
 
 
@@ -307,47 +265,214 @@
 
 
 
-
-
-
-<!-- Geçmiş Veriler Tablosu -->
-
- 
-    <table class="table"  data-sorting="true" data-paging="true">
-    </table>
-
-
-<!-- Geçmiş Veriler Tablo Bitiş -->
-
-
-
-
-
-</br>
-</br>
-</br>
-</br>
-
-
-
-
+<!-- VERİLERİ ANLIK OLARAK SİTEYE İŞLEME FONKSİYONU -->
 
     <script>
         const socket = io("http://localhost:3000/");
         socket.on('sensor_a1', function (msg) {
+
+
             console.log(msg);
             document.getElementById("donut1text").innerHTML = msg.voltage;
             document.getElementById("donut1value").setAttribute("data-value", msg.voltage);
             document.getElementById("donut2text").innerHTML = msg.flame;
             document.getElementById("donut2value").setAttribute("data-value", msg.flame);
+
+            // ŞEMA FONKSİYONU
+
+            $(function() {
+
+$(".progress").each(function() {
+
+  var value = $(this).attr('data-value');
+  var left = $(this).find('.progress-left .progress-bar');
+  var right = $(this).find('.progress-right .progress-bar');
+
+  if (value > 0) {
+    if (value <= 50) {
+      right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+      left.css('transform', 'rotate(' + percentageToDegrees(0) + 'deg)')
+    } else {
+      right.css('transform', 'rotate(180deg)')
+      left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+    }
+  }
+
+})
+            
+
+function percentageToDegrees(percentage) {
+
+  return percentage / 100 * 360
+
+}
+});
+
+
+            var x = Number(msg.voltage);
+            var y = Number(msg.flame);
+            if(x < 30){
+                alert("Pil azaldı!")
+            }
+            if (y > 60){
+                alert("Yangın var!")
+            }
+
         });
+
+        
         socket.on('sensor_a2', function (msg) {
+            var x = Number(msg.voltage);
+            var y = Number(msg.flame);
+           
+
+           
             console.log(msg);
             document.getElementById("donut3text").innerHTML = msg.voltage;
             document.getElementById("donut3value").setAttribute("data-value", msg.voltage);
+            document.getElementById("donut4text").innerHTML = msg.flame;
+            document.getElementById("donut4value").setAttribute("data-value", msg.flame);
+
+        // ŞEMA FONKSİYONU
+
+        $(function() {
+
+$(".progress").each(function() {
+
+  var value = $(this).attr('data-value');
+  var left = $(this).find('.progress-left .progress-bar');
+  var right = $(this).find('.progress-right .progress-bar');
+
+  if (value > 0) {
+    if (value <= 50) {
+      right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+      left.css('transform', 'rotate(' + percentageToDegrees(0) + 'deg)')
+    } else {
+      right.css('transform', 'rotate(180deg)')
+      left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+    }
+  }
+
+})
+            
+
+function percentageToDegrees(percentage) {
+
+  return percentage / 100 * 360
+
+}
+});
+
+
+
+
+
+        if(x < 30){
+                        alert("Pil azaldı!")
+                    }
+                    if (y > 60){
+                        alert("Yangın var!")
+                    }
+
+   
         });
 
+
+        socket.on('sensor_a3', function (msg) {
+
+
+console.log(msg);
+document.getElementById("donut5text").innerHTML = msg.voltage;
+document.getElementById("donut5value").setAttribute("data-value", msg.voltage);
+document.getElementById("donut6text").innerHTML = msg.flame;
+document.getElementById("donut6value").setAttribute("data-value", msg.flame);
+
+// ŞEMA FONKSİYONU
+
+$(function() {
+
+$(".progress").each(function() {
+
+var value = $(this).attr('data-value');
+var left = $(this).find('.progress-left .progress-bar');
+var right = $(this).find('.progress-right .progress-bar');
+
+if (value > 0) {
+if (value <= 50) {
+right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+left.css('transform', 'rotate(' + percentageToDegrees(0) + 'deg)')
+} else {
+right.css('transform', 'rotate(180deg)')
+left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+}
+}
+
+})
+
+
+function percentageToDegrees(percentage) {
+
+return percentage / 100 * 360
+
+}
+});
+
+
+var x = Number(msg.voltage);
+var y = Number(msg.flame);
+if(x < 30){
+    alert("Pil azaldı!")
+}
+if (y > 60){
+    alert("Yangın var!")
+}
+
+});
+
+
+     
     </script>
+<!-- VERİLERİ ANLIK OLARAK SİTEYE İŞLEME FONKSİYONU BİTİŞ -->
+
+
+
+<!-- Geçmiş Veriler Tablosu -->
+
+
+<table id = "tablo"  class="table"   data-sorting="true"></table>
+
+<!-- Geçmiş Veriler Tablosu Bitiş -->
+
+</br>
+</br>
+</br>
+</br>
+
+
+
+
+<!-- Veritabanından Gelecek Geçmiş Veri Temsili -->
+<script>
+    var jsonobj = [
+       
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T16:31:36.799Z"},
+            {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T16:31:36.799Z"},
+            {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T16:31:10.890Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T16:31:05.224Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T16:17:33.624Z"},
+            {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:11:24.494Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"88","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:09:57.770Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"80","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:09:52.775Z"},
+            {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:09:38.893Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:09:15.079Z"},
+            {"sensor_id":"sensor_a2","voltage":"10","flame":"80","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:05:28.138Z"},
+            {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:04:51.895Z"}
+        
+
+        
+    ]
+ </script>
+<!-- Temsili Veri Bitiş -->
 
 
 
@@ -359,137 +484,73 @@
 
 
 
-
     <script src="/public/js/jquery-3.1.1.min.js"></script>
     <script src="/public/js/moment.min.js"></script>
-    <script src="/public/js/footable.min.js"></script>
+    <script src="/public/js/footable.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js%22%3E"></script>
+    
 
 
 
 
 
-
-<!-- ŞEMALARIN ÇALIŞMA FONKSİYONU -->
-<script>
-    $(function() {
-
-       $(".progress").each(function() {
-     
-         var value = $(this).attr('data-value');
-         var left = $(this).find('.progress-left .progress-bar');
-         var right = $(this).find('.progress-right .progress-bar');
-     
-         if (value > 0) {
-           if (value <= 50) {
-             right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-           } else {
-             right.css('transform', 'rotate(180deg)')
-             left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-           }
-         }
-     
-       })
-     
-       function percentageToDegrees(percentage) {
-     
-         return percentage / 100 * 360
-     
-       }
-     
-     });
-     
-   </script>
-<!-- ŞEMA FONKSİYON BİTİŞ -->
-
-
-<!-- Veritabanından Gelecek Geçmiş Veri Temsili -->
-<script>
-    var jsonobj = [
-        { "id": 1, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 2, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 3, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 4, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 5, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 6, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 7, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 8, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 9, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 10, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 11, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 12, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 13, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 14, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 15, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 16, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 17, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 18, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 19, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 20, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 21, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 22, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 23, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 24, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 25, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 26, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 27, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 28, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 29, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 30, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" },
-        { "id": 31, "sensor": "Pil", "voltage": "2", "flame": "3", "location": "C Bölgesi", "date": "July 18th 2018","co" : "777" },
-        { "id": 32, "sensor": "Duman", "voltage": "5", "flame": "4", "location": "B Bölgesi", "date": "July 25th 1960","co" : "777" },
-        { "id": 33, "sensor": "Pil", "voltage": "1", "flame": "6", "location": "D Bölgesi", "date": "Oct 25th 1920","co" : "671" }
-    ]
- </script>
-<!-- Temsili Veri Bitiş -->
 
 
 
 <!-- TABLO FONSİYONU -->
+
+
 <script>
+
+
+
+
+var request = new XMLHttpRequest();
+
+request.open('GET', 'https://localhost:3000/api/yangin', true);
+
+request.onload = function () {
+    var data = this.response;
+    //dom eventleri bunun altında gerçekleştirebiliriz.
+
+
     jQuery(function($){
-	$('.table').footable({
+	$('#tablo').footable({
 
          "columns": 
          [
-			{ "name": "id", "title": "ID", "breakpoints": "xs" },
-			{ "name": "sensor", "title": "Sensör" },
+			{ "name": "sensor_id", "title": "ID", "breakpoints": "xs" },
 			{ "name": "voltage", "title": "Voltaj" },
 			{ "name": "flame", "title": "Flame", "breakpoints": "xs" },
 			{ "name": "location", "title": "Location", "breakpoints": "xs sm" },
-            { "name": "date", "title": "Date", "breakpoints": "xs sm md" },
-            { "name": "co", "title": "CO", "breakpoints": "xs sm md" }
+            { "name": "CO", "title": "CO", "breakpoints": "xs sm md" },
+            { "name": "date", "title": "Date", "breakpoints": "xs sm md" }
+           
 		],    
                                                                     
-        "rows": jsonobj,
+        "rows": data,
+        
 
         "paging": {
             "enabled": true,
-            "container": "#paging-ui-container",
-            "size": 5
+            "container": "#paging-ui-container", 
+            "size": 7
 		}
         
 	});
 });
 
+
+
+request.send();
+
+};
+
+
+   
+
 </script>
 <!-- TABLO FONSİYONU BİTİŞ -->
 
-<!-- ŞEMALARIN DEĞERLERİNİ VERDİĞİMİZ ALAN -->
-
-<script>
-document.getElementById("donut4text").innerHTML = "88";
-document.getElementById("donut4value").setAttribute("data-value", "88");
-
-document.getElementById("donut5text").innerHTML = "44";
-document.getElementById("donut5value").setAttribute("data-value", "44");
-
-document.getElementById("donut6text").innerHTML = "41";
-document.getElementById("donut6value").setAttribute("data-value", "41");
 
 
-
-</script>
-
-
-<!-- ŞEMALARIN DEĞERLERİNİ VERDİĞİMİZ ALAN BİTİŞ -->
