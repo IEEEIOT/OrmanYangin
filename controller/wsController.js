@@ -19,6 +19,3 @@ module.exports.getIO = () => {
     }
     return io;
 }
-// module.exports.yayma = (msg) => {
-//     io.emit(msg.sensor_id, msg);
-// }
