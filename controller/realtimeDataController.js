@@ -1,5 +1,4 @@
 const mqtt = require('mqtt');
-const socketio = require('socket.io');
 const db_operations = require('../lib/db_operations');
 
 const client = mqtt.connect('mqtt://broker.hivemq.com', options);

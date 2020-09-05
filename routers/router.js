@@ -3,7 +3,7 @@ const router = express.Router();//
 
 const indexController = require('../controller/indexController');
 const notFoundController = require('../controller/notFoundController');
-const realtimeDataController = require('../controller/realtimeDataController');
+// const realtimeDataController = require('../controller/realtimeDataController');
 const historyController = require('../controller/historyController');
 const apiController = require('../controller/apiController');
 
