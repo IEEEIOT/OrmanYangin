@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css"  href="/public/css/bootstrap.min.css" >
 <link rel="stylesheet" type="text/css" href="/public/css/main.css" >
 <script src="/public/css/footable.bootstrap.css"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
 <!-- şemaların başlıkları -->
@@ -271,7 +271,6 @@
         const socket = io("http://localhost:3000/");
         socket.on('sensor_a1', function (msg) {
 
-
             console.log(msg);
             document.getElementById("donut1text").innerHTML = msg.voltage;
             document.getElementById("donut1value").setAttribute("data-value", msg.voltage);
@@ -311,7 +310,7 @@ function percentageToDegrees(percentage) {
 
             var x = Number(msg.voltage);
             var y = Number(msg.flame);
-            if(x < 30){
+            if(x < 25){
                 alert("Pil azaldı!")
             }
             if (y > 60){
@@ -468,9 +467,7 @@ if (y > 60){
             {"sensor_id":"sensor_a2","voltage":"10","flame":"80","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:05:28.138Z"},
             {"sensor_id":"sensor_a1","voltage":"10","flame":"90","location":"asmkdasmd123213","CO":"29","date":"2020-09-04T15:04:51.895Z"}
         
-
-        
-    ]
+            ]
  </script>
 <!-- Temsili Veri Bitiş -->
 
@@ -483,12 +480,11 @@ if (y > 60){
 
 
 
-
+    
     <script src="/public/js/jquery-3.1.1.min.js"></script>
     <script src="/public/js/moment.min.js"></script>
     <script src="/public/js/footable.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js%22%3E"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
 
 
@@ -502,19 +498,13 @@ if (y > 60){
 
 <script>
 
+fetch('/api/yangin')
+    .then(response => response.json())
+    .then(data => {
+        
 
 
-
-var request = new XMLHttpRequest();
-
-request.open('GET', 'https://localhost:3000/api/yangin', true);
-
-request.onload = function () {
-    var data = this.response;
-    //dom eventleri bunun altında gerçekleştirebiliriz.
-
-
-    jQuery(function($){
+        jQuery(function($){
 	$('#tablo').footable({
 
          "columns": 
@@ -538,16 +528,24 @@ request.onload = function () {
 		}
         
 	});
+
 });
 
 
 
-request.send();
+    })
+    .catch(err => {
+        console.error('An error ocurred', err);
+    });
 
-};
 
+    $(document).ready(function() {
+$("#tablo").load("function.php");
+var refreshId = setInterval(function() {
+$("#tablo").load('function.php?parametre='+ Math.random());
+}, 1000); // 1 saniyede bir verileri çek
+});
 
-   
 
 </script>
 <!-- TABLO FONSİYONU BİTİŞ -->
