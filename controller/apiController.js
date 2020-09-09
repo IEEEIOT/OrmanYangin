@@ -8,7 +8,9 @@ module.exports.getDangerData = db_operations.yanginarama;
 module.exports.getDangerData2 = db_operations.idbazlisonxyanginarama;
 module.exports.createData = (req,res) => {
     msg = req.body;
+    console.log(msg);
     msg.date = Date.now();
+    
     if(msg.flame > 40){
         msg.yanginMi = true;
     }
@@ -16,7 +18,8 @@ module.exports.createData = (req,res) => {
         msg.yanginMi = false;
     }
     db_operations.kayit(msg);
+    
     getIO().emit(msg.sensor_id, msg);
-    res.end('data gonderildi');
+    res.send('data gonderildi');
 };
 module.exports.deleteData = db_operations.datasilme;
