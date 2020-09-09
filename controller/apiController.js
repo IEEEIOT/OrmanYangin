@@ -8,7 +8,6 @@ module.exports.getDangerData = db_operations.yanginarama;
 module.exports.getDangerData2 = db_operations.idbazlisonxyanginarama;
 module.exports.createData = (req,res) => {
     msg = req.body;
-    console.log(msg);
     msg.date = Date.now();
     
     if(msg.flame > 40){
