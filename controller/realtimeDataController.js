@@ -1,5 +1,4 @@
 const mqtt = require('mqtt');
-const socketio = require('socket.io');
 const db_operations = require('../lib/db_operations');
 
 const client = mqtt.connect('mqtt://broker.hivemq.com', options);
@@ -41,15 +40,14 @@ module.exports.listen = function(app){
         console.log(JSON.parse(message));
         msg = JSON.parse(message);
         msg.date = Date.now();
-        if(msg.voltage > 40){
+        if(msg.flame > 40){
             msg.yanginMi = true;
-            db_operations.kayit(msg);
         }
         else{
             msg.yanginMi = false;
-            db_operations.kayit(msg);
         }
-        io.emit(msg.sensor, msg);
+        db_operations.kayit(msg);
+        io.emit(msg.sensor_id, msg);
     });
 };
 
