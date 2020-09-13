@@ -320,7 +320,7 @@ function percentageToDegrees(percentage) {
         });
 
         
-        socket.on('sensor_a2', function (msg) {
+        socket.on('sensor_b1', function (msg) {
             var x = Number(msg.voltage);
             var y = Number(msg.flame);
            
@@ -377,7 +377,7 @@ function percentageToDegrees(percentage) {
         });
 
 
-        socket.on('sensor_a3', function (msg) {
+        socket.on('sensor_c1', function (msg) {
 
 
 console.log(msg);
