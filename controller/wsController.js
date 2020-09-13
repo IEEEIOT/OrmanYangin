@@ -12,6 +12,7 @@ module.exports.listen = function(app){
             console.log('user disconnected' + socket.id);
         })
     });
+    db_operations.anlikveriaramasi;
 };
 module.exports.getIO = () => {
     if(!io) {
