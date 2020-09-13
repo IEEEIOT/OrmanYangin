@@ -8,6 +8,7 @@ const historyController = require('../controller/historyController');
 const apiController = require('../controller/apiController');
 
 router.get('/', indexController.renderIndex);
+router.get('/',indexController.realtimedata);
 router.get('/history', historyController.renderHistory);
 router.get('/api/data', apiController.getData);
 router.get('/api/number/:number',apiController.getlastXData);

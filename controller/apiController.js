@@ -18,7 +18,7 @@ module.exports.createData = (req,res) => {
     }
     db_operations.kayit(msg);
     
-    getIO().emit(msg.sensor_id, msg);
+    // getIO().emit(msg.sensor_id, msg);
     res.send('data gonderildi');
 };
 module.exports.deleteData = db_operations.datasilme;
