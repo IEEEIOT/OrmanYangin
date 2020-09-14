@@ -4,5 +4,3 @@ module.exports.renderIndex = (req, res, next) => {
     res.render('indexView');
     next();
 };
-
-module.exports.realtimedata = db_operations.anlikveriaramasi;
