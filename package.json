@@ -11,7 +11,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.16",
     "mqtt": "^4.1.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   },
   "devDependencies": {},
   "scripts": {
